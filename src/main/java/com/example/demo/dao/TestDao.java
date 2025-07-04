@@ -21,5 +21,17 @@ public class TestDao {
     list = sqlSessionTemplate.selectList("testList", null);
     return list;
   }
+  public int testInsert(TestVO tvo) {
+    log.info("testInsert");
+    int result = 0;
+    result = sqlSessionTemplate.insert("testInsert",tvo);
+    return result;
+  }
+  public int testUpdate(TestVO tvo) {
+    log.info("testUpdate");
+    int result = 0;
+    result = sqlSessionTemplate.update("testUpdate",tvo);
+    return result;
+  }
   
 }

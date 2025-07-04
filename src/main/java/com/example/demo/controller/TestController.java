@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,7 +37,14 @@ public class TestController {
   public String testInsert(TestVO tvo){
     log.info(tvo.getT_no()+", "+tvo.getT_title()+", "+tvo.getT_content());
     int result = 0;
-    //testService.testInsert(tvo);
+    result = testService.testInsert(tvo);
+    return String.valueOf(result);
+  }
+  @PutMapping("testUpdate")
+  public String testUpdate(TestVO tvo){
+    log.info("testUpdate");
+    int result = 0;
+    result = testService.testUpdate(tvo);
     return String.valueOf(result);
   }
 }

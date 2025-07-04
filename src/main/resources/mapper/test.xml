@@ -4,7 +4,7 @@
 	<select id="testList" resultType="java.util.Map" parameterType="map">
 		SELECT t_no, t_title, t_content FROM test
 	</select>
-  <insert id="testInsert" parameterType="java.util.Map">
+  <insert id="testInsert" parameterType="com.example.demo.vo.TestVO">
     INSERT INTO test(t_no, t_title, t_content) VALUES(#{t_no}, #{t_title}, #{t_content})
   </insert>
   <update id="testUpdate" parameterType="map">

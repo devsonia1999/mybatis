@@ -3,7 +3,9 @@ package com.example.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,6 +48,13 @@ public class TestController {
     int result = 0;
     result = testService.testUpdate(tvo);
     return String.valueOf(result);
+  }
+  @DeleteMapping("testDelete/{t_no}")
+  public int testDelete(@PathVariable int t_no){
+    log.info("testDelete"+t_no);
+    int result = 0;
+    result = testService.testDelete(t_no);
+    return result;
   }
 }
 

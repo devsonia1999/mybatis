@@ -4,11 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.service.TestService;
-import com.example.demo.vo.testVO;
+import com.example.demo.vo.TestVO;
 import com.google.gson.Gson;
 
 import lombok.extern.log4j.Log4j2;
@@ -23,11 +24,20 @@ public class TestController {
   @GetMapping("testList")
   public String testList(){
     log.info("testList");
-    List<testVO> list = null;
+    List<TestVO> list = null;
     list = testService.testList();
     Gson g = new Gson();
     String temp = g.toJson(list);
     return temp;
+  }
+  // Rest API에서 post는 브라우저를 통해서 테스트 
+  // INSERT INTO test values(1, '제목21', '내용1')
+  @PostMapping("testInsert")
+  public String testInsert(TestVO tvo){
+    log.info(tvo.getT_no()+", "+tvo.getT_title()+", "+tvo.getT_content());
+    int result = 0;
+    //testService.testInsert(tvo);
+    return String.valueOf(result);
   }
 }
 

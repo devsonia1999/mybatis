@@ -6,7 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.vo.testVO;
+import com.example.demo.vo.TestVO;
 
 import lombok.extern.log4j.Log4j2;
 
@@ -15,9 +15,9 @@ import lombok.extern.log4j.Log4j2;
 public class TestDao {
   @Autowired
   private SqlSessionTemplate sqlSessionTemplate = null;
-  public List<testVO> testList() {
+  public List<TestVO> testList() {
     log.info("testList");
-    List<testVO> list = null;
+    List<TestVO> list = null;
     list = sqlSessionTemplate.selectList("testList", null);
     return list;
   }

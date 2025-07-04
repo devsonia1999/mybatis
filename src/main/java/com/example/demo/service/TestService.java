@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.TestDao;
-import com.example.demo.vo.testVO;
+import com.example.demo.vo.TestVO;
 
 import lombok.extern.log4j.Log4j2;
 
@@ -16,9 +16,9 @@ public class TestService {
   @Autowired
   private TestDao testDao = null;
 
-  public List<testVO> testList() {
+  public List<TestVO> testList() {
     log.info("testList");
-    List<testVO> list = null;
+    List<TestVO> list = null;
     list = testDao.testList();
     return list;
   }

@@ -1,15 +1,12 @@
 package com.example.demo.controller;
 
 import com.example.demo.vo.NoticeVO;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 

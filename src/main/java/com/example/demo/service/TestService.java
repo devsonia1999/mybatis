@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class TestService {
   public List<TestVO> testList() {
     log.info("testList");
     List<TestVO> list = null;
-    list = testDao.testList();
+    list = testDao.testList();//null이 올 수도 있습니다
     return list;
   }
 
